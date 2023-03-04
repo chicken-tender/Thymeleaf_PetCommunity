@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http:/www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>고양이 집사 커뮤니티</title>
+</head>
+<body>
+<h2>전체 회원 정보</h2>
+<table border="1" style="border-collapse: collapse;">
+  <thead style="background-color: royalblue; color: white;">
+  <tr>
+    <th>ID</th>
+    <th>PW</th>
+    <th>이름</th>
+    <th>메일</th>
+    <th>핸드폰</th>
+    <th>가입날짜</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="member : ${members}">
+    <td th:text="${member.id}"></td>
+    <td th:text="${member.pw}"></td>
+    <td th:text="${member.name}"></td>
+    <td th:text="${member.mail}"></td>
+    <td th:text="${member.phone}"></td>
+    <td th:text="${member.joinDate}"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
