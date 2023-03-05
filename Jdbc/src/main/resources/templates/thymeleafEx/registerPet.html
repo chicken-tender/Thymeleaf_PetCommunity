@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>고양이 집사 커뮤니티</title>
+</head>
+<body>
+<h1>펫 등록</h1>
+<form th:action="@{/register/pet}" th:object="${pets}" method="post">
+  <div>
+    <label for="id">집사 :</label>
+    <input type="text" id="id" th:field="*{id}" />
+  </div>
+  <div>
+    <label for="petName">이름 :</label>
+    <input type="text" id="petName" th:field="*{petName}" />
+  </div>
+  <div>
+    <label for="petGender">성별 :</label>
+    <input type="text" id="petGender" th:field="*{petGender}" />
+  </div>
+  <div>
+    <label for="petBday">생년월일 :</label>
+    <input type="text" id="petBday" th:field="*{petBday}" />
+  </div>
+  <div>
+    <label for="petSpec">종류 :</label>
+    <input type="text" id="petSpec" th:field="*{petSpec}" />
+  </div>
+  <div>
+    <button type="submit">등록하기</button>
+  </div>
+</form>
+</body>
+</html>

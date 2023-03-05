@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>고양이 집사 커뮤니티</title>
+</head>
+<body>
+<h1>글쓰기</h1>
+<form th:action="@{/post/write}" th:object="${post}" method="post">
+<!--  <div>-->
+<!--    <label for="boardNum">글번호 :</label>-->
+<!--    <input type="text" id="boardNum" th:field="*{boardNum}" />-->
+<!--  </div>-->
+  <div>
+    <label for="boardName">게시판명(자유 게시판 or 정보 공유) :</label>
+    <input type="text" id="boardName" th:field="*{boardName}" />
+  </div>
+  <div>
+    <label for="title">제목 :</label>
+    <input type="text" id="title" th:field="*{title}" />
+  </div>
+  <div>
+    <label for="bodyText">본문 :</label>
+    <input type="text" id="bodyText" th:field="*{bodyText}" />
+  </div>
+  <div>
+    <label for="id">ID :</label>
+    <input type="text" id="id" th:field="*{id}" />
+  </div>
+  <div>
+    <button type="submit">완료</button>
+  </div>
+</form>
+</body>
+</html>

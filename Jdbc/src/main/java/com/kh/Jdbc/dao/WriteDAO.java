@@ -38,4 +38,21 @@ public class WriteDAO {
         }
         return list;
     }
+
+    public void writePost(WriteVO wvo) {
+        String sql = "INSERT INTO WRITE VALUES(BOARD_SEQ.NEXTVAL, ?,?,?,SYSDATE,?)";
+        try {
+            conn = com.kh.Jdbc.common.Common.getConnection();
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,wvo.getBoardName());
+            pstmt.setString(2,wvo.getTitle());
+            pstmt.setString(3,wvo.getBodyText());
+            pstmt.setString(4,wvo.getId());
+            pstmt.executeUpdate();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+        com.kh.Jdbc.common.Common.close(pstmt);
+        com.kh.Jdbc.common.Common.close(conn);
+    }
 }

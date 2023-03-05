@@ -56,6 +56,10 @@ import java.sql.Date;
             this.bodyText = bodyText;
         }
 
+        public WriteVO() {
+
+        }
+
         public int getReplyNum() {
             return replyNum;
         }

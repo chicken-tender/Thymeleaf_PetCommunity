@@ -15,9 +15,7 @@ public class MemberDAO {
     public String loginId = null;
 
     public void signUp(MemberVO mvo) {
-
         String sql = "INSERT INTO MEMBER VALUES(?,?,?,?,?,SYSDATE)";
-
         try {
             conn = com.kh.Jdbc.common.Common.getConnection();
             pStmt = conn.prepareStatement(sql);

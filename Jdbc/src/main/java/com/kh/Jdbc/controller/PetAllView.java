@@ -1,6 +1,6 @@
 package com.kh.Jdbc.controller;
-import com.kh.Jdbc.dao.MemberDAO;
-import com.kh.Jdbc.vo.MemberVO;
+import com.kh.Jdbc.dao.PetDAO;
+import com.kh.Jdbc.vo.PetVO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,14 +9,14 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/allView")
-public class MemberAllView {
-    private MemberDAO mdao;
+public class PetAllView {
+    private PetDAO pdao;
 
-    @GetMapping("/member")
+    @GetMapping("/pet")
     public String index(Model model) {
-        mdao = new MemberDAO();
-        List<MemberVO> members = mdao.memAll();
-        model.addAttribute("members", members);
-        return "thymeleafEx/memberAllView";
+        pdao = new PetDAO();
+        List<PetVO> pets = pdao.petAll();
+        model.addAttribute("pets", pets);
+        return "thymeleafEx/petAllView";
     }
 }
