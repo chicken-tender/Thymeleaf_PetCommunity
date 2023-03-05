@@ -1,5 +1,4 @@
 package com.kh.Jdbc.vo;
-
 import java.sql.Date;
 
 public class MemberVO {

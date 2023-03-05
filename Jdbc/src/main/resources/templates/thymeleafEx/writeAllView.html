@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http:/www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>고양이 집사 커뮤니티</title>
+</head>
+<body>
+<h2>전체 글 목록</h2>
+<table border="1" style="border-collapse: collapse;">
+  <thead style="background-color: royalblue; color: white;">
+  <tr>
+    <th>글번호</th>
+    <th>게시판명</th>
+    <th>작성자</th>
+    <th>제목</th>
+    <th>등록날짜</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="write : ${lists}">
+    <td th:text="${write.boardNum}"></td>
+    <td th:text="${write.boardName}"></td>
+    <td th:text="${write.id}"></td>
+    <td th:text="${write.title}"></td>
+    <td th:text="${write.regDate}"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
